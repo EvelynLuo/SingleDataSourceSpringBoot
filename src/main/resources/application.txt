@@ -1,8 +1,12 @@
+mybatis:
+  mapper-locations: classpath:mapping/*.xml
+
+
 spring:
 datasource:
   username: springboot
   password: 123456
-  url: jdbc:mysql://49.234.104.13:3306/uat2?useUnicode=true&characterEncoding=UTF-8
+  url: jdbc:mysql://49.234.104.13:3306/uat2?useSSL=false&useUnicode=true&characterEncoding=UTF8&serverTimezone=GMT&allowPublicKeyRetrieval=true
   driver-class-name: com.mysql.jdbc.Driver
   type: com.alibaba.druid.pool.DruidDataSource
   #Spring Boot 默认是不注入这些属性值的，需要自己绑定

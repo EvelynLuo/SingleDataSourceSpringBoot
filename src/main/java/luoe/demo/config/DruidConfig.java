@@ -9,6 +9,7 @@ import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+
 import javax.sql.DataSource;
 import java.util.HashMap;
 import java.util.Map;
@@ -22,8 +23,9 @@ import java.util.Map;
 @Configuration
 public class DruidConfig {
 
+
+    @Bean //(destroyMethod = "close", initMethod = "init")
     @ConfigurationProperties(prefix = "spring.datasource")
-    @Bean
     public DataSource druidDataSource() {
         return new DruidDataSource();
     }
